@@ -2,12 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Loader() {
+  const pathname = usePathname();
+  const skip = pathname?.startsWith("/ig-shot");
   const [done, setDone] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (skip) return;
     let raf: number;
     const start = performance.now();
     const duration = 1400;
@@ -19,7 +23,9 @@ export default function Loader() {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [skip]);
+
+  if (skip) return null;
 
   return (
     <AnimatePresence>

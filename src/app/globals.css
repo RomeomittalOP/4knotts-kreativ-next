@@ -144,3 +144,32 @@ html.lenis body {
   opacity: 0.55;
   pointer-events: none;
 }
+
+/* Auto-scrolling gallery wall (seamless loop via duplicated content + -50%) */
+@keyframes gallery-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+@keyframes gallery-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.gallery-col {
+  will-change: transform;
+}
+.gallery-wall:hover .gallery-col {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-col {
+    animation: none !important;
+  }
+}

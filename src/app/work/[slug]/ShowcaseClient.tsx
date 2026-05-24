@@ -7,6 +7,7 @@ import { useRef } from "react";
 import type { Project } from "@/lib/data";
 import LaptopMockup from "@/components/showcase/LaptopMockup";
 import PhoneMockup from "@/components/showcase/PhoneMockup";
+import GalleryWall from "@/components/showcase/GalleryWall";
 
 export default function ShowcaseClient({
   project,
@@ -192,61 +193,13 @@ export default function ShowcaseClient({
             </span>
           </div>
 
-          {/* Masonry (CSS columns): every photo shows in FULL at its natural
-              aspect ratio — nothing is cropped. Different heights pack neatly
-              into balanced columns. */}
-          <div className="mt-12 gap-4 [column-fill:_balance] columns-1 sm:columns-2 lg:columns-3">
-            {project.gallery.map((g, i) => (
-              <motion.figure
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-2xl border border-white/10"
-              >
-                {g.src ? (
-                  // Full image, natural ratio, never cropped.
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={g.src}
-                    alt={g.label ?? `${project.title} image ${i + 1}`}
-                    loading="lazy"
-                    className="block h-auto w-full"
-                  />
-                ) : (
-                  <div className={`relative aspect-[4/3] bg-gradient-to-br ${g.theme}`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,255,255,0.22),transparent_60%)]" />
-                    <div className="absolute inset-0 mix-blend-overlay opacity-50">
-                      <svg width="100%" height="100%" aria-hidden>
-                        <defs>
-                          <pattern id={`gg-${i}`} width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="0.5" />
-                          </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill={`url(#gg-${i})`} />
-                      </svg>
-                    </div>
-                  </div>
-                )}
-
-                {/* hover sheen + index badge (no zoom, so nothing ever crops) */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute right-3 top-3 rounded-full bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-
-                {g.label && (
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-4 text-white">
-                    <div className="font-display text-base font-medium">{g.label}</div>
-                    {g.caption && (
-                      <div className="mt-0.5 text-[11px] text-white/70">{g.caption}</div>
-                    )}
-                  </div>
-                )}
-              </motion.figure>
-            ))}
-          </div>
+          {/* Auto-scrolling gallery wall — full images, never cropped.
+              One column shows the reel script (when provided). */}
+          <GalleryWall
+            items={project.gallery}
+            projectTitle={project.title}
+            scriptCards={project.reelScript}
+          />
         </div>
       </section>
 

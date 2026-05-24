@@ -1,3 +1,11 @@
+export type ReelCard = {
+  n: number;
+  category: string;
+  duration: string;
+  title: string;
+  hook: string;
+};
+
 export type GalleryItem = {
   ratio: "wide" | "tall" | "square";
   theme: string; // tailwind gradient classes (fallback if no image)
@@ -88,7 +96,61 @@ export type Project = {
   instagramFollowers?: string;
   /** Optional following count label (default "318"). */
   instagramFollowing?: string;
+
+  /**
+   * Optional. Reel scripts shown as a scrolling column inside the gallery wall.
+   */
+  reelScript?: ReelCard[];
 };
+
+export const omegaReelScript: ReelCard[] = [
+  { n: 1, category: "Behind the Scenes", duration: "45–60s", title: "Factory Floor: How a Geometry Box Is Made", hook: "Do you know how your geometry box is actually made?" },
+  { n: 2, category: "Behind the Scenes", duration: "45–55s", title: "The Quality Check Room Nobody Shows You", hook: "This is the room that decides if a product ships or gets rejected." },
+  { n: 3, category: "Behind the Scenes", duration: "45–60s", title: "Packing an Export Order for Overseas", hook: "Packing 10,000 geometry boxes heading to the UAE tonight. 📦" },
+  { n: 4, category: "Product Showcase", duration: "30–45s", title: "Satisfying Unboxing — Factory to Student", hook: "The geometry box every Indian student grew up with. 🗂️" },
+  { n: 5, category: "Product Showcase", duration: "60s", title: "Bravo Pen vs 5 Brands — Durability Challenge", hook: "We challenged the Bravo gel pen against 5 competitors. ⚔️" },
+  { n: 6, category: "Education", duration: "45–55s", title: "5 Geometry Hacks Your Teacher Never Told You", hook: "5 geometry hacks your teacher never taught you 🤯" },
+  { n: 7, category: "Education", duration: "45s", title: "What's in a Geometry Box?", hook: "Your box has 7 tools. Do you know what ALL of them do? 🤔" },
+  { n: 8, category: "Brand Story", duration: "45s", title: "Award Display — Plexconcil Export Awards", hook: "India's highest stationery exporter since 1978. 🏆" },
+  { n: 9, category: "Behind the Scenes", duration: "50–60s", title: "3 Plants in One Reel — Mumbai, Daman & Baddi", hook: "3 cities. 1 brand. 60+ years. 🗺️" },
+  { n: 10, category: "Engagement", duration: "35–45s", title: "Guess the Product — Mystery Reel", hook: "Can you name ALL 5? Most people get stuck on #3. 🤔" },
+  { n: 11, category: "Engagement", duration: "40–50s", title: "My First Geometry Box vs Now", hook: "1990s vs 2024 — which one did YOU have? 👇" },
+  { n: 12, category: "Engagement", duration: "40–50s", title: "Rate Your Desk Setup", hook: "Rate this desk setup out of 10. It's all Omega. 👇" },
+  { n: 13, category: "Behind the Scenes", duration: "45–55s", title: "In-House Printing Facility Tour", hook: "Most companies outsource printing. We don't. 🖨️" },
+  { n: 14, category: "Product Showcase", duration: "60s", title: "275 Products in 60 Seconds", hook: "60 seconds. 275 products. All made in India. ⏱️" },
+];
+
+export const stationeryReelScript: ReelCard[] = [
+  { n: 1, category: "Funny · Relatable", duration: "15–20s", title: "POV: You entered for one pen…", hook: "I'm just buying one pen..." },
+  { n: 2, category: "Satisfying · Aesthetic", duration: "12–15s", title: "The Smoothest Pen Test", hook: "POV: You finally found THAT pen." },
+  { n: 3, category: "Trend · Relatable", duration: "15–20s", title: "Student Starter Pack", hook: "Student starter pack in 2026:" },
+  { n: 4, category: "Comedy", duration: "15s", title: "Expectation vs Reality", hook: "Me after buying aesthetic stationery..." },
+  { n: 5, category: "Viral · Satisfying", duration: "12–15s", title: "More Satisfying Than Therapy", hook: "Things more satisfying than therapy..." },
+];
+
+export const vrikshReelScript: ReelCard[] = [
+  { n: 1, category: "Recipe", duration: "45–60s", title: "Dal Tadka in 15 Minutes", hook: "Ye dal hotel waali se bhi achhi kyun lagti hai?" },
+  { n: 2, category: "Recipe", duration: "30–40s", title: "Perfect Jeera Rice — Every Grain Separated", hook: "8mm → 16mm. Asli Basmati ki pehchaan." },
+  { n: 3, category: "Recipe", duration: "45–55s", title: "Aloo Paratha — Maa Ke Haath Jaisa", hook: "Maa ke haath ki roti ka raaz? Asli chakki atta." },
+  { n: 4, category: "Recipe", duration: "30–35s", title: "Masala Chai in 5 Minutes — Morning Ritual", hook: "Subah ki chai sahi bane, toh din bhi sahi jaata hai. ☕" },
+  { n: 5, category: "Behind the Product", duration: "55–70s", title: "Stone Chakki — Behind Our Atta", hook: "Ye hai woh chakki — jahaan se Vriksh Atta aata hai." },
+  { n: 6, category: "Behind the Product", duration: "45–55s", title: "Cold Press Oil — Live Extraction", hook: "Zero heat. Zero chemicals. Sirf asli ras." },
+  { n: 7, category: "Humour · Relatable", duration: "15–20s", title: "POV: Vriksh Masala Khola…", hook: "…aur poori building jaag gayi 🏢" },
+  { n: 8, category: "Humour · Skit", duration: "25–35s", title: "Indian Maa vs Cold-Pressed Oil", hook: "When you try to be healthy at home 💪" },
+  { n: 9, category: "Festival Campaign", duration: "45–55s", title: "Diwali Hamper — Gift Jo Dil Chhu Le", hook: "Is Diwali — gift something real. 🪔" },
+  { n: 10, category: "Humour · Relatable", duration: "20–30s", title: "Zomato ₹280 vs Ghar Ka ₹35", hook: "Dal Chawal on Zomato… ₹280 😱" },
+];
+
+export const accdReelScript: ReelCard[] = [
+  { n: 1, category: "Event Highlight", duration: "60s", title: "Annual Ball 2026 — Highlight Reel", hook: "The night Delhi's air cargo industry waits for all year." },
+  { n: 2, category: "Leadership", duration: "30–45s", title: "Meet Our President", hook: "The person who leads 235 air cargo professionals in Delhi…" },
+  { n: 3, category: "Community", duration: "30s", title: "A Day at the Monthly Lunch", hook: "Every month, Delhi's air cargo community comes together." },
+  { n: 4, category: "Education", duration: "30s", title: "Cargo Tip in 30 Seconds", hook: "One cargo tip. 30 seconds. Every Wednesday." },
+  { n: 5, category: "Community", duration: "45–60s", title: "Outstation Trip Diary", hook: "When the cargo industry takes a break…" },
+  { n: 6, category: "Industry Stat", duration: "20–30s", title: "Did You Know? — Industry Stat", hook: "1,000,000 MT of cargo through Delhi Airport. Every year." },
+  { n: 7, category: "Brand Story", duration: "45s", title: "Founders Day — 47 Years of History", hook: "1977. A group of Delhi's cargo professionals had a vision." },
+  { n: 8, category: "Community", duration: "30s", title: "Dance Evening / Family Picnic", hook: "Delhi's cargo community knows how to have fun. 💃" },
+];
 
 export const projects: Project[] = [
   {
@@ -121,6 +183,7 @@ export const projects: Project[] = [
     //   "/projects/4-knotts-stationery/preview/02.jpg",
     //   "/projects/4-knotts-stationery/preview/03.jpg",
     // ],
+    reelScript: stationeryReelScript,
     gallery: [
       // Add `src: "/projects/4-knotts-stationery/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#FF8FB1] to-[#6C63FF]", label: "Notebook Series", caption: "Editorial product layout" },
@@ -186,6 +249,7 @@ export const projects: Project[] = [
     //   "/projects/omega/preview/02.jpg",
     //   "/projects/omega/preview/03.jpg",
     // ],
+    reelScript: omegaReelScript,
     gallery: [
       // Add `src: "/projects/omega/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#0e1a2c] to-[#00E5FF]", label: "Landing", caption: "Brand-led hero" },
@@ -251,6 +315,7 @@ export const projects: Project[] = [
     //   "/projects/vriksh/preview/02.jpg",
     //   "/projects/vriksh/preview/03.jpg",
     // ],
+    reelScript: vrikshReelScript,
     gallery: [
       // Add `src: "/projects/vriksh/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#0e1a16] to-[#7CFFB2]", label: "Story Hero", caption: "Cinematic intro" },
@@ -316,6 +381,7 @@ export const projects: Project[] = [
     //   "/projects/accd/preview/02.jpg",
     //   "/projects/accd/preview/03.jpg",
     // ],
+    reelScript: accdReelScript,
     gallery: [
       // Add `src: "/projects/accd/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#0f0e1c] to-[#F0B96A]", label: "Members Hub", caption: "Authority by design" },

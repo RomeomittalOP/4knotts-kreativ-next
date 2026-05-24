@@ -12,10 +12,14 @@ export default function InstagramMock({
   project,
   width,
   height,
+  autoOpen = true,
+  initialOpen = null,
 }: {
   project: Project;
   width: number;
   height: number;
+  autoOpen?: boolean;
+  initialOpen?: number | null;
 }) {
   const posts = project.instagramPosts ?? [];
   const handle =
@@ -31,11 +35,12 @@ export default function InstagramMock({
   const u = width / 270;
   const px = (n: number) => Math.round(n * u);
 
-  const [open, setOpen] = useState<number | null>(null);
-  const [cursor, setCursor] = useState(0);
+  const [open, setOpen] = useState<number | null>(autoOpen ? null : initialOpen);
+  const [cursor, setCursor] = useState(initialOpen ?? 0);
 
   // Auto-open / close loop
   useEffect(() => {
+    if (!autoOpen) return;
     if (posts.length === 0) return;
     let alive = true;
     let t: ReturnType<typeof setTimeout>;
@@ -56,7 +61,7 @@ export default function InstagramMock({
       alive = false;
       clearTimeout(t);
     };
-  }, [posts.length]);
+  }, [posts.length, autoOpen]);
 
   return (
     <div
