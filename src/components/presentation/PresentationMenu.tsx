@@ -117,15 +117,16 @@ function PresentationTile({ project, index }: { project: Project; index: number 
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className={`absolute inset-0 bg-gradient-to-br ${project.accent}`}
           >
-            {project.coverImage ? (
-              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl">
-  <Image
-    src={item.image}
-    fill
-    className="object-contain"
-    alt=""
-  />
-</div>
+           {project.coverImage ? (
+  <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl">
+    <Image
+      src={project.coverImage}
+      fill
+      className="object-contain"
+      alt={project.name}
+    />
+  </div>
+
             ) : null}
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,255,255,0.22),transparent_60%)]" />
             {!project.coverImage && (
