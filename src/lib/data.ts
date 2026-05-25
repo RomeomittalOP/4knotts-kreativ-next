@@ -417,6 +417,67 @@ export const projects: Project[] = [
       { kind: "footer", brand: "Air Cargo Club of Delhi" },
     ],
   },
+  {
+    slug: "veloura",
+    title: "Veloura by 4Knotts",
+    tag: "Luxury Beauty · Brand & E-Commerce",
+    shortIntro:
+      "A luxury beauty house where science meets the soul of luxury.",
+    longIntro:
+      "Veloura is a premium beauty and skincare brand — pure ingredients, honest formulas, crafted in India. The experience turns an everyday routine into an intentional ritual, with deep-plum elegance, gold detailing, and tactile motion throughout.",
+    description:
+      "A premium digital flagship for a luxury beauty brand — elegant, sensorial, and conversion-focused.",
+    highlights: [
+      "Modern UI",
+      "Responsive design",
+      "Interactive experience",
+      "Smooth animations",
+      "User-friendly design",
+    ],
+    year: "2026",
+    accent: "from-[#1A0A2E] via-[#B76E79] to-[#C9A96E]",
+    themeBg: "#100619",
+    themePrimary: "#C9A96E",
+    themeAccent: "#B76E79",
+    // 👇 Drop your image paths here once files are in /public/projects/veloura/
+    // logoImage: "/projects/veloura/logo.png",
+    // coverImage: "/projects/veloura/cover.jpg",
+    // previewImages: [ "/projects/veloura/preview/01.jpg", ... ],
+    gallery: [
+      // Add `src: "/projects/veloura/gallery/01.jpg"` to any item to use a real image.
+      { ratio: "wide", theme: "from-[#1A0A2E] to-[#C9A96E]", label: "Landing", caption: "Sensorial hero" },
+      { ratio: "square", theme: "from-[#B76E79] to-[#C9A96E]", label: "Eau de Parfum" },
+      { ratio: "square", theme: "from-[#100619] to-[#B76E79]", label: "The Ritual" },
+      { ratio: "wide", theme: "from-[#C9A96E] to-[#1A0A2E]", label: "Collection", caption: "Shop experience" },
+    ],
+    frame: [
+      { kind: "nav", brand: "VELOURA" },
+      {
+        kind: "hero",
+        title: "Where science meets the soul of luxury.",
+        subtitle: "Pure ingredients. Honest formulas. Crafted in India.",
+        cta: "Shop the collection",
+      },
+      { kind: "marquee", words: ["Saffron · Rose · Sandalwood", "Dermatologist tested", "Crafted in India", "Free shipping over ₹2,999"] },
+      {
+        kind: "grid",
+        items: [
+          { title: "Eau de Parfum", sub: "₹ 4,250" },
+          { title: "Vitamin C Serum", sub: "₹ 2,890" },
+          { title: "Repair Cream", sub: "₹ 3,400" },
+          { title: "Luxury Oils", sub: "₹ 3,950" },
+        ],
+      },
+      {
+        kind: "splitImage",
+        title: "A ritual, not a routine.",
+        body: "From the wax-sealed envelope to the first drop — every detail is designed to feel intentional.",
+      },
+      { kind: "feature", title: "Honest beauty, fully disclosed.", body: "Ethically sourced botanicals and clinically proven actives. Nothing hidden, nothing harsh." },
+      { kind: "cta", title: "Begin your ritual.", cta: "Explore Veloura" },
+      { kind: "footer", brand: "Veloura by 4 Knotts" },
+    ],
+  },
 ];
 
 export const socials = [

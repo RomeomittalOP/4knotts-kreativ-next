@@ -59,6 +59,18 @@ function ProjectMark({ project }: { project: Project }) {
       </div>
     );
   }
+  if (slug === "veloura") {
+    return (
+      <div className="text-center text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+        <div className="font-display text-5xl font-light tracking-[0.32em] md:text-7xl">
+          VELOURA
+        </div>
+        <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.4em] opacity-80">
+          by 4 Knotts
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="text-center text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
       <div className="font-display text-7xl font-medium tracking-[0.06em] md:text-9xl">ACCD</div>
