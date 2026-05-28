@@ -141,6 +141,19 @@ export const vrikshReelScript: ReelCard[] = [
   { n: 10, category: "Humour · Relatable", duration: "20–30s", title: "Zomato ₹280 vs Ghar Ka ₹35", hook: "Dal Chawal on Zomato… ₹280 😱" },
 ];
 
+export const solidReelScript: ReelCard[] = [
+  { n: 1, category: "Pain Point · Premium", duration: "30–35s", title: "Your Lighting Is Killing Your Interior", hook: "Acha interior bhi cheap lag sakta hai… sirf galat lighting ki wajah se." },
+  { n: 2, category: "Compare · Viral", duration: "25s", title: "Cheap vs Premium Lighting", hook: "Difference dikha? Cheap lighting room ko destroy karti hai. SOLID creates atmosphere." },
+  { n: 3, category: "Product · Cinematic", duration: "20–25s", title: "Track Light Cinematic Ad", hook: "Focus. Control. Precision. ⚡" },
+  { n: 4, category: "Viral · Premium", duration: "25s", title: "If Apple Made Lights", hook: "Imagine if Apple made lighting." },
+  { n: 5, category: "Transformation", duration: "35s", title: "The Showroom Transformation", hook: "Customers products nahi… experience buy karte hain." },
+  { n: 6, category: "Commercial", duration: "30s", title: "Lights That Sell Products", hook: "Agar lighting sahi ho — products automatically premium lagte hain." },
+  { n: 7, category: "B2B · Architect", duration: "20s", title: "Architect's Favorite", hook: "Every architect knows — lighting defines the space." },
+  { n: 8, category: "Brand Story", duration: "25s", title: "Indian Brand. Global Feel.", hook: "Made in India. Built like global luxury brands." },
+  { n: 9, category: "Product · Hero", duration: "15–18s", title: "Product Hero Reel", hook: "Anti-Glare · Precision Beam · Premium Finish." },
+  { n: 10, category: "Viral Hook", duration: "25–30s", title: "Why Your Interior Looks Cheap", hook: "Your interior isn't bad. Your LIGHTING is." },
+];
+
 export const accdReelScript: ReelCard[] = [
   { n: 1, category: "Event Highlight", duration: "60s", title: "Annual Ball 2026 — Highlight Reel", hook: "The night Delhi's air cargo industry waits for all year." },
   { n: 2, category: "Leadership", duration: "30–45s", title: "Meet Our President", hook: "The person who leads 235 air cargo professionals in Delhi…" },
@@ -476,6 +489,121 @@ export const projects: Project[] = [
       { kind: "feature", title: "Honest beauty, fully disclosed.", body: "Ethically sourced botanicals and clinically proven actives. Nothing hidden, nothing harsh." },
       { kind: "cta", title: "Begin your ritual.", cta: "Explore Veloura" },
       { kind: "footer", brand: "Veloura by 4 Knotts" },
+    ],
+  },
+  {
+    slug: "solid",
+    title: "SOLID",
+    tag: "Lighting Brand · Marketing Site",
+    shortIntro:
+      "An LED lighting manufacturer's brand site — clean, confident, conversion-led.",
+    longIntro:
+      "A static marketing experience for Solid State Lights (SOLID) — Indian LED indoor lighting since 2004. Catalog-led architecture across 34 product models with WhatsApp-first contact and architect-grade presentation.",
+    description:
+      "A premium marketing website for an Indian LED lighting brand, with a 34-model catalog and WhatsApp-first enquiries.",
+    highlights: [
+      "Modern UI",
+      "Responsive design",
+      "Interactive experience",
+      "Smooth animations",
+      "User-friendly design",
+    ],
+    year: "2026",
+    accent: "from-[#0A1B2E] via-[#005AAA] to-[#FDB813]",
+    themeBg: "#0A1B2E",
+    themePrimary: "#FDB813",
+    themeAccent: "#005AAA",
+    // 👇 Drop files in /public/projects/solid/  (logo.png, cover.jpg, gallery/, preview/)
+    reelScript: solidReelScript,
+    gallery: [
+      { ratio: "wide", theme: "from-[#0A1B2E] to-[#FDB813]", label: "Landing", caption: "Architect-grade hero" },
+      { ratio: "square", theme: "from-[#005AAA] to-[#FDB813]", label: "Catalog" },
+      { ratio: "square", theme: "from-[#0A1B2E] to-[#005AAA]", label: "Product Detail" },
+      { ratio: "wide", theme: "from-[#FDB813] to-[#005AAA]", label: "WhatsApp Flow", caption: "Frictionless enquiry" },
+    ],
+    frame: [
+      { kind: "nav", brand: "SOLID" },
+      {
+        kind: "hero",
+        title: "Lighting Everything.",
+        subtitle: "Indian LED indoor lighting since 2004. 34 product models. Architect-grade.",
+        cta: "View catalog",
+      },
+      { kind: "marquee", words: ["Since 2004", "34 product models", "Made in India", "ISI-grade drivers"] },
+      {
+        kind: "grid",
+        items: [
+          { title: "COB Downlite", sub: "SL CB 01–31" },
+          { title: "LED Panels", sub: "Backlit · Edge-lit" },
+          { title: "Track Lights", sub: "Retail · Hospitality" },
+          { title: "Surface Lights", sub: "Architectural" },
+        ],
+      },
+      {
+        kind: "splitImage",
+        title: "Engineered for spaces that demand more.",
+        body: "From COB downlights to architectural panels — built in India for residences, offices, and retail.",
+      },
+      { kind: "feature", title: "Quality you can specify.", body: "ISI standards. Industry-grade drivers. Five-year peace of mind." },
+      { kind: "cta", title: "Let's plan your lighting.", cta: "Talk on WhatsApp" },
+      { kind: "footer", brand: "SOLID · Solid State Lights" },
+    ],
+  },
+  {
+    slug: "clearmychallan",
+    title: "ClearMyChallan",
+    tag: "Legal-Tech · Full-Stack Platform",
+    shortIntro:
+      "Advocate-assisted vehicle challan resolution — pay less, with a lawyer on your side.",
+    longIntro:
+      "A full-stack legal-tech platform for resolving vehicle challans through advocate assistance — starting as low as 60% of the original fine. Secure, encrypted, refund-backed, with Razorpay UPI payments and an end-to-end audit trail.",
+    description:
+      "A premium legal-tech platform: React + Node + Mongo, JWT auth, Razorpay UPI, and a pluggable challan-provider integration.",
+    highlights: [
+      "Modern UI",
+      "Responsive design",
+      "Interactive experience",
+      "Smooth animations",
+      "User-friendly design",
+    ],
+    year: "2026",
+    accent: "from-[#0B1B3F] via-[#1D4ED8] to-[#5E86FB]",
+    themeBg: "#0B1B3F",
+    themePrimary: "#5E86FB",
+    themeAccent: "#1D4ED8",
+    // 👇 Drop files in /public/projects/clearmychallan/  (logo.png, cover.jpg, gallery/, preview/)
+    gallery: [
+      { ratio: "wide", theme: "from-[#0B1B3F] to-[#1D4ED8]", label: "Landing", caption: "Confidence-first hero" },
+      { ratio: "square", theme: "from-[#1D4ED8] to-[#5E86FB]", label: "Challan Check" },
+      { ratio: "square", theme: "from-[#0B1B3F] to-[#5E86FB]", label: "Advocate Match" },
+      { ratio: "wide", theme: "from-[#5E86FB] to-[#1D4ED8]", label: "Razorpay Flow", caption: "Frictionless UPI" },
+    ],
+    frame: [
+      { kind: "nav", brand: "ClearMyChallan" },
+      {
+        kind: "hero",
+        title: "Resolve your challan with an advocate.",
+        subtitle: "Starting as low as 60% of the fine. Secure, encrypted, refund-backed.",
+        cta: "Check your challan",
+      },
+      { kind: "marquee", words: ["Advocate-assisted", "Razorpay UPI", "End-to-end encrypted", "Refund-backed"] },
+      {
+        kind: "grid",
+        items: [
+          { title: "Check Challan", sub: "Instant lookup" },
+          { title: "Pay Lower", sub: "Up to 40% off" },
+          { title: "Advocate Help", sub: "Verified panel" },
+          { title: "Refund Backed", sub: "Risk-free" },
+        ],
+      },
+      {
+        kind: "splitImage",
+        title: "We fight your case. You save up to 40%.",
+        body: "Legal expertise paired with a frictionless payment flow — built for modern India.",
+      },
+      { kind: "feature", title: "Built like a fintech. Run like a law firm.", body: "JWT auth, encrypted payloads, and a MongoDB-backed audit trail on every case." },
+      { kind: "cta", title: "Don't pay full. Pay smart.", cta: "Get started" },
+      { kind: "footer", brand: "ClearMyChallan" },
     ],
   },
 ];

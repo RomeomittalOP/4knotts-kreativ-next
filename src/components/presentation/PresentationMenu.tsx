@@ -71,6 +71,35 @@ function ProjectMark({ project }: { project: Project }) {
       </div>
     );
   }
+  if (slug === "solid") {
+    return (
+      <div className="text-center text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+        <div className="mx-auto mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 backdrop-blur md:h-14 md:w-14">
+          <svg viewBox="0 0 24 24" className="h-6 w-6 md:h-8 md:w-8" fill="currentColor" aria-hidden>
+            <path d="M9 2h6l-1 5h2l-5 8v-5H8l1-8z" />
+          </svg>
+        </div>
+        <div className="font-display text-6xl font-bold tracking-[0.18em] md:text-8xl">
+          SOLID
+        </div>
+        <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.4em] opacity-80">
+          Lighting Everything
+        </div>
+      </div>
+    );
+  }
+  if (slug === "clearmychallan") {
+    return (
+      <div className="text-center text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+        <div className="font-display text-5xl font-semibold tracking-tight md:text-7xl">
+          Clear<span className="text-white/70">My</span>Challan
+        </div>
+        <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.4em] opacity-80">
+          Advocate-Assisted
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="text-center text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
       <div className="font-display text-7xl font-medium tracking-[0.06em] md:text-9xl">ACCD</div>
