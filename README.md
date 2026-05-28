@@ -38,3 +38,5 @@ src/
 ```
 
 Edit `src/lib/data.ts` to change projects, social links, stats, or testimonials.
+
+<!-- Vercel redeploy trigger: Thu May 28 22:26:45 IST 2026 -->
