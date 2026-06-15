@@ -13,10 +13,12 @@ export default function ShowcaseClient({
   project,
   prev,
   next,
+  hideNav = false,
 }: {
   project: Project;
   prev: Project;
   next: Project;
+  hideNav?: boolean;
 }) {
   const heroRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -204,15 +206,36 @@ export default function ShowcaseClient({
       </section>
 
       {/* ------------ PREV / NEXT ------------ */}
-      <section className="relative section-py">
-        <div className="container-px mx-auto max-w-7xl">
-          <div className="grid gap-4 md:grid-cols-2">
-            <NavCard label="Previous project" project={prev} direction="prev" />
-            <NavCard label="Next project" project={next} direction="next" />
+      {!hideNav && (
+        <section className="relative section-py">
+          <div className="container-px mx-auto max-w-7xl">
+            <div className="grid gap-4 md:grid-cols-2">
+              <NavCard label="Previous project" project={prev} direction="prev" />
+              <NavCard label="Next project" project={next} direction="next" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
+  );
+}
+
+export function ShowcaseNav({
+  prev,
+  next,
+}: {
+  prev: Project;
+  next: Project;
+}) {
+  return (
+    <section className="relative section-py">
+      <div className="container-px mx-auto max-w-7xl">
+        <div className="grid gap-4 md:grid-cols-2">
+          <NavCard label="Previous project" project={prev} direction="prev" />
+          <NavCard label="Next project" project={next} direction="next" />
+        </div>
+      </div>
+    </section>
   );
 }
 

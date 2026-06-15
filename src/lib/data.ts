@@ -383,24 +383,22 @@ export const projects: Project[] = [
     ],
     year: "2024",
     accent: "from-[#F0B96A] via-[#6C63FF] to-[#00E5FF]",
-    themeBg: "#0f0e1c",
-    themePrimary: "#F0B96A",
-    themeAccent: "#6C63FF",
-    // 👇 Drop your image paths here once files are in /public/projects/accd/
-    // logoImage: "/projects/accd/logo.png",
-    // coverImage: "/projects/accd/cover.jpg",
-    // previewImages: [
-    //   "/projects/accd/preview/01.jpg",
-    //   "/projects/accd/preview/02.jpg",
-    //   "/projects/accd/preview/03.jpg",
-    // ],
+    themeBg: "#050b14",
+    themePrimary: "#c9a25a",
+    themeAccent: "#0a1628",
+    logoImage: "/projects/accd/logo.png",
+    coverImage: "/projects/accd/gallery/Master Template.png",
+    previewImages: [
+      "/projects/accd/gallery/Master Template.png",
+      "/projects/accd/gallery/Screenshot 2026-05-21 211317.png",
+      "/projects/accd/gallery/Screenshot 2026-05-25 004505.png",
+    ],
     reelScript: accdReelScript,
     gallery: [
-      // Add `src: "/projects/accd/gallery/01.jpg"` to any item to use a real image.
-      { ratio: "wide", theme: "from-[#0f0e1c] to-[#F0B96A]", label: "Members Hub", caption: "Authority by design" },
-      { ratio: "square", theme: "from-[#F0B96A] to-[#6C63FF]", label: "Events" },
-      { ratio: "square", theme: "from-[#0f0e1c] to-[#6C63FF]", label: "Press Room" },
-      { ratio: "wide", theme: "from-[#6C63FF] to-[#F0B96A]", label: "Annual Report", caption: "Editorial layout" },
+      { ratio: "wide", theme: "from-[#050b14] to-[#c9a25a]", label: "Homepage Showcase", caption: "Master template — industry authority by design", src: "/projects/accd/gallery/Master Template.png" },
+      { ratio: "square", theme: "from-[#c9a25a] to-[#0a1628]", label: "Website Detail", src: "/projects/accd/gallery/Screenshot 2026-05-21 211317.png" },
+      { ratio: "square", theme: "from-[#050b14] to-[#0a1628]", label: "Website Detail", src: "/projects/accd/gallery/Screenshot 2026-05-25 004505.png" },
+      { ratio: "wide", theme: "from-[#0a1628] to-[#c9a25a]", label: "Brand Visual", caption: "Identity in motion", src: "/projects/accd/gallery/ChatGPT Image May 19, 2026, 04_55_19 PM.png" },
     ],
     frame: [
       { kind: "nav", brand: "ACCD" },

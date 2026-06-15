@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data";
 import { withAssets } from "@/lib/assets.server";
-import ShowcaseClient from "./ShowcaseClient";
+import ShowcaseClient, { ShowcaseNav } from "./ShowcaseClient";
+import AccdPitch from "@/components/showcase/AccdPitch";
 
 type Params = { slug: string };
 
@@ -41,7 +42,15 @@ export default async function WorkPage({
 
   return (
     <main className="relative">
-      <ShowcaseClient project={project} prev={prev} next={next} />
+      {slug === "accd" ? (
+        <>
+          <ShowcaseClient project={project} prev={prev} next={next} hideNav />
+          <AccdPitch />
+          <ShowcaseNav prev={prev} next={next} />
+        </>
+      ) : (
+        <ShowcaseClient project={project} prev={prev} next={next} />
+      )}
     </main>
   );
 }
