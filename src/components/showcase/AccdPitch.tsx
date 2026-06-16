@@ -15,185 +15,208 @@ const INSTAGRAM = [
   `${ACCD}/instagram/ChatGPT Image May 19, 2026, 04_55_31 PM.png`,
 ];
 
-const NAVY = "#0a1628";
-const NAVY_DEEP = "#050b14";
-const GOLD = "#c9a25a";
-const GOLD_SOFT = "#e8c98a";
-const PAPER = "#f4ede0";
+const INK = "#05080f";
+const NIGHT = "#0a1220";
+const PAPER = "#f3ede0";
+const GOLD = "#c8a35a";
+const GOLD_SOFT = "#e0c489";
+const MUTED = "rgba(243,237,224,0.55)";
 
-const SECTIONS = [
-  { id: "cover", n: "01", label: "Cover" },
-  { id: "summary", n: "02", label: "Executive Summary" },
-  { id: "identity", n: "03", label: "Brand Identity" },
-  { id: "website", n: "04", label: "Website Experience" },
-  { id: "social", n: "05", label: "Social Media Strategy" },
-  { id: "system", n: "06", label: "Visual Design System" },
-  { id: "deliverables", n: "07", label: "Key Deliverables" },
-  { id: "why", n: "08", label: "Why This Works" },
-  { id: "future", n: "09", label: "Future Opportunities" },
-  { id: "closing", n: "10", label: "Closing" },
-];
-
-function SectionLabel({ n, label }: { n: string; label: string }) {
+function SectionHeader({
+  n,
+  kicker,
+  title,
+  intro,
+}: {
+  n: string;
+  kicker: string;
+  title: string;
+  intro?: string;
+}) {
   return (
-    <div className="flex items-center gap-4 mb-8">
-      <span
-        className="text-xs tracking-[0.4em] font-mono"
-        style={{ color: GOLD }}
-      >
-        {n}
-      </span>
-      <span className="h-px w-12" style={{ background: GOLD }} />
-      <span
-        className="text-xs tracking-[0.35em] uppercase"
-        style={{ color: PAPER, opacity: 0.7 }}
-      >
-        {label}
-      </span>
+    <div className="mb-16 md:mb-24">
+      <div className="flex items-center gap-5 mb-10">
+        <span
+          className="font-mono text-[10px] tracking-[0.5em]"
+          style={{ color: GOLD }}
+        >
+          {n}
+        </span>
+        <span className="h-px w-16" style={{ background: GOLD }} />
+        <span
+          className="text-[10px] tracking-[0.45em] uppercase"
+          style={{ color: MUTED }}
+        >
+          {kicker}
+        </span>
+      </div>
+      <h2
+        className="font-display font-light tracking-[-0.01em] text-[2.25rem] leading-[1.1] md:text-[3.5rem] md:leading-[1.05] max-w-[22ch]"
+        style={{ color: PAPER }}
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
+      {intro && (
+        <p
+          className="mt-8 max-w-2xl text-[1.05rem] leading-[1.7] md:text-[1.15rem]"
+          style={{ color: MUTED }}
+        >
+          {intro}
+        </p>
+      )}
     </div>
   );
 }
 
+function GoldRule({ width = "w-14" }: { width?: string }) {
+  return <span className={`block h-px ${width}`} style={{ background: GOLD }} />;
+}
+
 export default function AccdPitch() {
   return (
-    <main
-      className="relative min-h-screen"
-      style={{ background: NAVY_DEEP, color: PAPER }}
+    <div
+      className="relative"
+      style={{
+        background: INK,
+        color: PAPER,
+        fontFeatureSettings: '"ss01","ss02","kern"',
+      }}
     >
-      {/* Top meta bar */}
+      {/* faint grain backdrop */}
       <div
-        className="sticky top-0 z-30 backdrop-blur-md border-b"
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay"
         style={{
-          background: `${NAVY_DEEP}cc`,
-          borderColor: `${GOLD}33`,
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)",
+          backgroundSize: "3px 3px",
         }}
-      >
-        <div className="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between text-[11px] tracking-[0.3em] uppercase">
-          <span style={{ color: GOLD }}>4 Knotts Kreativ</span>
-          <span style={{ color: PAPER, opacity: 0.6 }}>
-            ACCD · Confidential Pitch Document
-          </span>
-          <span style={{ color: PAPER, opacity: 0.6 }}>2026</span>
-        </div>
-      </div>
+      />
 
       {/* ============ 01 COVER ============ */}
       <section
         id="cover"
-        className="relative min-h-[92vh] flex flex-col items-center justify-center px-8 py-24"
+        className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 py-24"
         style={{
-          background: `radial-gradient(ellipse at center, ${NAVY} 0%, ${NAVY_DEEP} 70%)`,
+          background: `radial-gradient(ellipse at 50% 35%, ${NIGHT} 0%, ${INK} 70%)`,
         }}
       >
-        <div className="text-center max-w-3xl">
-          <div className="mb-12 inline-block">
+        <div className="relative z-10 w-full max-w-4xl text-center">
+          <p
+            className="text-[10px] tracking-[0.55em] uppercase mb-12"
+            style={{ color: GOLD }}
+          >
+            A Confidential Proposal
+          </p>
+
+          <div className="mb-14 inline-block">
             <Image
               src={LOGO}
               alt="ACCD"
-              width={220}
-              height={220}
+              width={200}
+              height={200}
               className="mx-auto"
               priority
             />
           </div>
-          <p
-            className="text-[11px] tracking-[0.45em] uppercase mb-6"
-            style={{ color: GOLD }}
-          >
-            A Digital Transformation Proposal
-          </p>
+
           <h1
-            className="font-display text-5xl md:text-7xl leading-[1.05] font-light mb-8"
+            className="font-display font-light leading-[1.02] tracking-[-0.02em] text-[2.5rem] md:text-[5rem]"
             style={{ color: PAPER }}
           >
-            Positioning ACCD as the definitive digital voice of India&rsquo;s
-            air cargo community.
+            The digital voice of
+            <br />
+            <em
+              className="not-italic"
+              style={{
+                fontStyle: "italic",
+                fontWeight: 300,
+                color: GOLD_SOFT,
+              }}
+            >
+              India&rsquo;s air cargo
+            </em>
+            <br />
+            community.
           </h1>
-          <div
-            className="mx-auto w-24 h-px mb-8"
-            style={{ background: GOLD }}
-          />
-          <div className="text-sm tracking-[0.2em] uppercase space-y-2 opacity-80">
-            <p>Prepared by &mdash; 4 Knotts Kreativ</p>
-            <p>For &mdash; Air Cargo Club of Delhi</p>
-            <p style={{ color: GOLD }}>
+
+          <div className="my-12 flex items-center justify-center gap-4">
+            <GoldRule />
+            <span
+              className="text-[10px] tracking-[0.45em] uppercase"
+              style={{ color: MUTED }}
+            >
+              A digital transformation
+            </span>
+            <GoldRule />
+          </div>
+
+          <div className="space-y-2 text-[11px] tracking-[0.35em] uppercase">
+            <p style={{ color: MUTED }}>Prepared by</p>
+            <p style={{ color: GOLD_SOFT }}>4 Knotts Kreativ</p>
+            <p className="pt-3" style={{ color: MUTED }}>
+              For
+            </p>
+            <p style={{ color: GOLD_SOFT }}>Air Cargo Club of Delhi</p>
+            <p
+              className="pt-1 text-[9px] tracking-[0.4em]"
+              style={{ color: MUTED }}
+            >
               Office of the President &amp; Executive Committee
             </p>
           </div>
-          <p
-            className="mt-16 text-[10px] tracking-[0.4em] uppercase"
-            style={{ color: PAPER, opacity: 0.4 }}
-          >
-            Confidential &mdash; For ACCD leadership review
-          </p>
         </div>
+
+        {/* corner marks */}
+        <CornerMarks />
       </section>
 
       {/* ============ 02 EXECUTIVE SUMMARY ============ */}
-      <section
-        id="summary"
-        className="px-8 py-32"
-        style={{ background: NAVY_DEEP }}
-      >
-        <div className="max-w-[1100px] mx-auto">
-          <SectionLabel n="02" label="Executive Summary" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-12 max-w-3xl">
-            The Air Cargo Club of Delhi sits at the intersection of policy,
-            trade, and the people who move India&rsquo;s economy by air.
-          </h2>
-          <p className="text-lg leading-relaxed opacity-85 mb-8 max-w-3xl">
-            Its digital presence should carry the same weight. This proposal
-            presents a completed brand and digital framework engineered for
-            ACCD &mdash; a unified website, identity system, and social media
-            language that reflect the Club&rsquo;s authority within the air
-            cargo and logistics sector.
-          </p>
-          <p className="text-lg leading-relaxed opacity-85 mb-12 max-w-3xl">
-            The work has been built to do three things:
-          </p>
+      <section id="summary" className="relative px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-5xl">
+          <SectionHeader
+            n="01"
+            kicker="Executive Summary"
+            title="The Air Cargo Club of Delhi sits at the intersection of policy, trade, and the people who move India&rsquo;s economy by air."
+            intro="Its digital presence should carry the same weight. This proposal presents a completed brand and digital framework engineered for ACCD — a unified website, identity system, and social media language that reflect the Club&rsquo;s authority within the air cargo and logistics sector."
+          />
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {[
               {
-                k: "01",
-                t: "Establish Authority",
-                d: "Position ACCD as the recognised industry forum for air cargo professionals in the National Capital Region.",
+                n: "I",
+                t: "Establish authority",
+                d: "Position ACCD as the recognised industry forum for air cargo professionals across the National Capital Region.",
               },
               {
-                k: "02",
-                t: "Strengthen Trust",
+                n: "II",
+                t: "Strengthen trust",
                 d: "Build member confidence through a consistent, executive-grade brand voice across every touchpoint.",
               },
               {
-                k: "03",
-                t: "Own the Platform",
-                d: "Create a publishing platform for industry insight, events, advocacy, and member engagement &mdash; owned by ACCD.",
+                n: "III",
+                t: "Own the platform",
+                d: "Create a publishing platform for industry insight, events, advocacy, and member engagement — owned by ACCD.",
               },
             ].map((it) => (
-              <div
-                key={it.k}
-                className="p-8 border"
-                style={{
-                  borderColor: `${GOLD}40`,
-                  background: `${NAVY}80`,
-                }}
-              >
+              <div key={it.n} className="border-t pt-8" style={{ borderColor: `${GOLD}55` }}>
                 <p
-                  className="text-xs tracking-[0.4em] font-mono mb-4"
-                  style={{ color: GOLD }}
+                  className="font-display text-xl mb-4"
+                  style={{ color: GOLD_SOFT }}
                 >
-                  {it.k}
+                  {it.n}
                 </p>
                 <h3
-                  className="font-display text-xl mb-3"
-                  style={{ color: GOLD_SOFT }}
+                  className="font-display text-lg mb-3 leading-snug"
+                  style={{ color: PAPER }}
                 >
                   {it.t}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed opacity-80"
-                  dangerouslySetInnerHTML={{ __html: it.d }}
-                />
+                  className="text-sm leading-[1.7]"
+                  style={{ color: MUTED }}
+                >
+                  {it.d}
+                </p>
               </div>
             ))}
           </div>
@@ -203,91 +226,92 @@ export default function AccdPitch() {
       {/* ============ 03 BRAND IDENTITY ============ */}
       <section
         id="identity"
-        className="px-8 py-32"
-        style={{ background: NAVY }}
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
       >
-        <div className="max-w-[1200px] mx-auto">
-          <SectionLabel n="03" label="Brand Identity" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            An identity engineered for boardrooms, ministries, and global cargo
-            forums.
-          </h2>
-          <p className="text-lg opacity-80 mb-16 max-w-2xl">
-            Refined to operate at the level ACCD&rsquo;s membership expects.
-          </p>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="02"
+            kicker="Brand Identity"
+            title="An identity engineered for <em style='color:#e0c489;font-style:italic;font-weight:300'>boardrooms</em>, ministries, and global cargo forums."
+            intro="Refined to operate at the level ACCD&rsquo;s membership expects."
+          />
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div
-              className="aspect-square flex items-center justify-center rounded-sm"
-              style={{
-                background: `linear-gradient(135deg, ${NAVY_DEEP}, ${NAVY})`,
-                border: `1px solid ${GOLD}30`,
-              }}
-            >
-              <Image
-                src={LOGO}
-                alt="ACCD logo"
-                width={320}
-                height={320}
-                className="opacity-95"
-              />
+          <div className="grid md:grid-cols-12 gap-12 items-center mb-20">
+            <div className="md:col-span-5">
+              <div
+                className="aspect-square flex items-center justify-center rounded-sm"
+                style={{
+                  background: `radial-gradient(circle at 50% 40%, ${INK}, ${NIGHT})`,
+                  border: `1px solid ${GOLD}30`,
+                }}
+              >
+                <Image
+                  src={LOGO}
+                  alt="ACCD logo"
+                  width={320}
+                  height={320}
+                  className="opacity-95"
+                />
+              </div>
             </div>
-            <div className="space-y-8">
+            <div className="md:col-span-7 space-y-10">
               {[
                 {
                   t: "Logo System",
-                  d: "A primary mark for corporate use and a refined variant for digital and merchandise applications.",
+                  d: "Primary mark for corporate use, refined variant for digital and merchandise — each measured at the boardroom scale.",
                 },
                 {
                   t: "Palette",
-                  d: "Deep aviation blue, gold accents, and neutral greys &mdash; authoritative, professional, unmistakably aviation.",
+                  d: "Aviation navy, restrained gold, and a neutral ivory. Authoritative, professional, unmistakably aviation.",
                 },
                 {
                   t: "Typography",
-                  d: "Corporate serif for headlines paired with a clean sans-serif for body. Legible at scale, dignified in tone.",
+                  d: "Corporate serif for headlines, paired with a clean sans-serif for body. Legible at scale, dignified in tone.",
                 },
                 {
                   t: "Voice",
-                  d: "Measured, informed, member-first. Never promotional. Always credible.",
+                  d: "Measured. Informed. Member-first. Never promotional. Always credible.",
                 },
               ].map((it) => (
-                <div
-                  key={it.t}
-                  className="border-l pl-6"
-                  style={{ borderColor: GOLD }}
-                >
+                <div key={it.t}>
                   <h3
-                    className="font-display text-xl mb-2"
+                    className="font-display text-[1.15rem] mb-2 tracking-[-0.005em]"
                     style={{ color: GOLD_SOFT }}
                   >
                     {it.t}
                   </h3>
                   <p
-                    className="text-sm opacity-80 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: it.d }}
-                  />
+                    className="text-[0.95rem] leading-[1.75] max-w-xl"
+                    style={{ color: MUTED }}
+                  >
+                    {it.d}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* palette swatches */}
-          <div className="grid grid-cols-4 gap-4">
+          {/* palette swatches — clean, no hex */}
+          <div className="grid grid-cols-4 gap-3 md:gap-6">
             {[
-              { c: NAVY_DEEP, n: "Aviation Navy" },
-              { c: NAVY, n: "Cargo Blue" },
+              { c: INK, n: "Aviation Navy" },
+              { c: NIGHT, n: "Cargo Blue" },
               { c: GOLD, n: "Industry Gold" },
               { c: PAPER, n: "Ivory" },
             ].map((s) => (
               <div key={s.n}>
                 <div
-                  className="h-24 mb-2"
+                  className="aspect-[4/3]"
                   style={{
                     background: s.c,
-                    border: `1px solid ${GOLD}30`,
+                    border: `1px solid ${GOLD}25`,
                   }}
                 />
-                <p className="text-[10px] tracking-[0.3em] uppercase opacity-70">
+                <p
+                  className="mt-3 text-[10px] tracking-[0.3em] uppercase"
+                  style={{ color: MUTED }}
+                >
                   {s.n}
                 </p>
               </div>
@@ -297,52 +321,76 @@ export default function AccdPitch() {
       </section>
 
       {/* ============ 04 WEBSITE EXPERIENCE ============ */}
-      <section
-        id="website"
-        className="px-8 py-32"
-        style={{ background: NAVY_DEEP }}
-      >
-        <div className="max-w-[1300px] mx-auto">
-          <SectionLabel n="04" label="Website Experience" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            The Club&rsquo;s digital headquarters.
-          </h2>
-          <p className="text-lg opacity-80 mb-12 max-w-2xl">
-            One authoritative source for members, partners, government
-            stakeholders, and the wider industry.
-          </p>
+      <section id="website" className="relative px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="03"
+            kicker="Website Experience"
+            title="The Club&rsquo;s <em style='color:#e0c489;font-style:italic;font-weight:300'>digital headquarters.</em>"
+            intro="One authoritative source for members, partners, government stakeholders, and the wider industry."
+          />
 
-          <div
-            className="relative w-full overflow-hidden mb-16 rounded-sm"
-            style={{ border: `1px solid ${GOLD}40` }}
-          >
-            <Image
-              src={MASTER}
-              alt="ACCD Website Master Template"
-              width={2400}
-              height={1500}
-              className="w-full h-auto"
-              priority
+          {/* framed master template */}
+          <div className="relative mb-24">
+            <div
+              className="absolute -inset-4 md:-inset-6 rounded-sm pointer-events-none"
+              style={{
+                background: `linear-gradient(135deg, ${GOLD}22, transparent 60%)`,
+              }}
             />
+            <div
+              className="relative overflow-hidden rounded-sm"
+              style={{
+                background: NIGHT,
+                border: `1px solid ${GOLD}40`,
+                boxShadow:
+                  "0 40px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,163,90,0.1)",
+              }}
+            >
+              {/* browser chrome */}
+              <div
+                className="flex items-center gap-2 px-4 py-3 border-b"
+                style={{ borderColor: `${GOLD}25`, background: INK }}
+              >
+                <span className="h-2 w-2 rounded-full" style={{ background: "#ff5f57" }} />
+                <span className="h-2 w-2 rounded-full" style={{ background: "#febc2e" }} />
+                <span className="h-2 w-2 rounded-full" style={{ background: "#28c840" }} />
+                <span
+                  className="ml-4 text-[10px] tracking-[0.25em] uppercase"
+                  style={{ color: MUTED }}
+                >
+                  accd.in &nbsp;·&nbsp; Air Cargo Club of Delhi
+                </span>
+              </div>
+              <Image
+                src={MASTER}
+                alt="ACCD Website Master Template"
+                width={2400}
+                height={1500}
+                className="w-full h-auto block"
+                priority
+              />
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+          {/* editorial grid */}
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
             {[
               {
                 t: "Industry-leading homepage",
-                d: "Events, advocacy, and member voices on a single screen &mdash; ACCD&rsquo;s leadership communicated at first glance.",
+                d: "Events, advocacy, and member voices on a single screen — ACCD&rsquo;s leadership communicated at first glance.",
               },
               {
                 t: "Members&rsquo; section",
                 d: "Directory, leadership, committees, verified communication. Designed for trust.",
               },
               {
-                t: "Events &amp; engagements hub",
+                t: "Events &amp; engagements",
                 d: "Conferences, networking evenings, training programs, and trade interactions in one place.",
               },
               {
                 t: "Industry insights",
-                d: "The Club speaking to the industry &mdash; on policy, trade, and operational priorities.",
+                d: "The Club speaking to the industry — on policy, trade, and operational priorities.",
               },
               {
                 t: "Mobile-first responsive",
@@ -352,20 +400,23 @@ export default function AccdPitch() {
                 t: "The digital office",
                 d: "Engineered to feel less like a community page and more like the digital office of an industry body.",
               },
-            ].map((it) => (
-              <div key={it.t} className="flex gap-4">
-                <div
-                  className="mt-2 w-2 h-2 rounded-full shrink-0"
-                  style={{ background: GOLD }}
-                />
+            ].map((it, i) => (
+              <div key={it.t} className="flex gap-6">
+                <span
+                  className="font-mono text-[10px] tracking-[0.3em] pt-1.5"
+                  style={{ color: GOLD }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div>
                   <h3
-                    className="font-display text-lg mb-1"
+                    className="font-display text-[1.05rem] mb-2 leading-snug"
                     style={{ color: GOLD_SOFT }}
                     dangerouslySetInnerHTML={{ __html: it.t }}
                   />
                   <p
-                    className="text-sm opacity-75 leading-relaxed"
+                    className="text-[0.92rem] leading-[1.75]"
+                    style={{ color: MUTED }}
                     dangerouslySetInnerHTML={{ __html: it.d }}
                   />
                 </div>
@@ -378,25 +429,28 @@ export default function AccdPitch() {
       {/* ============ 05 SOCIAL MEDIA STRATEGY ============ */}
       <section
         id="social"
-        className="px-8 py-32"
-        style={{ background: NAVY }}
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
       >
-        <div className="max-w-[1300px] mx-auto">
-          <SectionLabel n="05" label="Social Media Strategy" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            Four pillars matched to the Club&rsquo;s actual mandate.
-          </h2>
-          <p className="text-lg opacity-80 mb-16 max-w-2xl">
-            Not a generic agency content calendar. A publishing system designed
-            for an industry body.
-          </p>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="04"
+            kicker="Social Media Strategy"
+            title="Four pillars matched to the Club&rsquo;s <em style='color:#e0c489;font-style:italic;font-weight:300'>actual mandate</em>."
+            intro="Not a generic agency content calendar. A publishing system designed for an industry body."
+          />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20">
+          {/* refined creative grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-24">
             {INSTAGRAM.map((src, i) => (
               <div
                 key={src}
-                className="aspect-square overflow-hidden rounded-sm"
-                style={{ border: `1px solid ${GOLD}30` }}
+                className="aspect-square overflow-hidden"
+                style={{
+                  background: INK,
+                  border: `1px solid ${GOLD}25`,
+                  boxShadow: "0 20px 40px -12px rgba(0,0,0,0.5)",
+                }}
               >
                 <Image
                   src={src}
@@ -409,50 +463,45 @@ export default function AccdPitch() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* pillars — editorial, no boxy cards */}
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-14">
             {[
               {
-                n: "01",
+                n: "I",
                 t: "Industry Authority",
-                d: "Policy commentary, cargo industry data, customs and trade updates &mdash; positioning ACCD as a thought leader, not a noticeboard.",
+                d: "Policy commentary, cargo industry data, customs and trade updates — positioning ACCD as a thought leader, not a noticeboard.",
               },
               {
-                n: "02",
+                n: "II",
                 t: "Member Spotlight",
                 d: "Recognising member firms, leaders, and milestones. Strengthening the sense of belonging that defines the Club.",
               },
               {
-                n: "03",
+                n: "III",
                 t: "Events &amp; Engagements",
-                d: "Pre-event anticipation, live coverage, and post-event recall &mdash; extending impact well beyond the venue.",
+                d: "Pre-event anticipation, live coverage, and post-event recall — extending impact well beyond the venue.",
               },
               {
-                n: "04",
+                n: "IV",
                 t: "Behind the Cargo",
-                d: "Humanising the industry &mdash; the operations, the people, the late nights at the airport. Engagement without losing stature.",
+                d: "Humanising the industry — the operations, the people, the late nights at the airport. Engagement without losing stature.",
               },
             ].map((p) => (
-              <div
-                key={p.n}
-                className="p-8"
-                style={{
-                  background: NAVY_DEEP,
-                  border: `1px solid ${GOLD}40`,
-                }}
-              >
+              <div key={p.n} className="border-t pt-8" style={{ borderColor: `${GOLD}55` }}>
                 <p
-                  className="text-xs tracking-[0.4em] font-mono mb-3"
-                  style={{ color: GOLD }}
+                  className="font-display text-xl mb-4"
+                  style={{ color: GOLD_SOFT }}
                 >
-                  PILLAR {p.n}
+                  {p.n}
                 </p>
                 <h3
-                  className="font-display text-2xl mb-3"
-                  style={{ color: GOLD_SOFT }}
+                  className="font-display text-[1.35rem] mb-3 tracking-[-0.005em]"
+                  style={{ color: PAPER }}
                   dangerouslySetInnerHTML={{ __html: p.t }}
                 />
                 <p
-                  className="text-sm leading-relaxed opacity-80"
+                  className="text-[0.95rem] leading-[1.75] max-w-md"
+                  style={{ color: MUTED }}
                   dangerouslySetInnerHTML={{ __html: p.d }}
                 />
               </div>
@@ -462,56 +511,44 @@ export default function AccdPitch() {
       </section>
 
       {/* ============ 06 VISUAL DESIGN SYSTEM ============ */}
-      <section
-        id="system"
-        className="px-8 py-32"
-        style={{ background: NAVY_DEEP }}
-      >
-        <div className="max-w-[1300px] mx-auto">
-          <SectionLabel n="06" label="Visual Design System" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            A documented system. No drift. No off-brand output.
-          </h2>
-          <p className="text-lg opacity-80 mb-16 max-w-2xl">
-            The infrastructure that underpins everything ACCD will publish from
-            this point forward.
-          </p>
+      <section id="system" className="relative px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="05"
+            kicker="Visual Design System"
+            title="A documented system. <em style='color:#e0c489;font-style:italic;font-weight:300'>No drift.</em> No off-brand output."
+            intro="The infrastructure that underpins everything ACCD will publish from this point forward."
+          />
 
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
-            <div
-              className="overflow-hidden rounded-sm"
-              style={{ border: `1px solid ${GOLD}40` }}
-            >
-              <Image
-                src={SHOT_1}
-                alt="ACCD design system reference"
-                width={1600}
-                height={1000}
-                className="w-full h-auto"
-              />
-            </div>
-            <div
-              className="overflow-hidden rounded-sm"
-              style={{ border: `1px solid ${GOLD}40` }}
-            >
-              <Image
-                src={SHOT_2}
-                alt="ACCD design system reference"
-                width={1600}
-                height={1000}
-                className="w-full h-auto"
-              />
-            </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-20">
+            {[SHOT_1, SHOT_2].map((src) => (
+              <div
+                key={src}
+                className="overflow-hidden"
+                style={{
+                  border: `1px solid ${GOLD}30`,
+                  boxShadow: "0 30px 60px -20px rgba(0,0,0,0.5)",
+                }}
+              >
+                <Image
+                  src={src}
+                  alt="ACCD design system reference"
+                  width={1600}
+                  height={1000}
+                  className="w-full h-auto block"
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-x-8 gap-y-10">
             {[
               {
-                t: "Grid &amp; layout",
+                t: "Grid &amp; Layout",
                 d: "Consistent structure across web, social, presentations, and print.",
               },
               {
-                t: "Imagery direction",
+                t: "Imagery Direction",
                 d: "Aircraft, freight floors, GSE, cargo terminals, real people. Not stock.",
               },
               {
@@ -523,17 +560,19 @@ export default function AccdPitch() {
                 d: "Pre-built decks, event banners, member communication, social formats.",
               },
             ].map((it) => (
-              <div
-                key={it.t}
-                className="p-6"
-                style={{ background: NAVY, border: `1px solid ${GOLD}30` }}
-              >
+              <div key={it.t}>
+                <GoldRule />
                 <h3
-                  className="font-display text-base mb-2"
+                  className="font-display text-[1rem] mt-4 mb-2"
                   style={{ color: GOLD_SOFT }}
                   dangerouslySetInnerHTML={{ __html: it.t }}
                 />
-                <p className="text-xs opacity-75 leading-relaxed">{it.d}</p>
+                <p
+                  className="text-[0.88rem] leading-[1.7]"
+                  style={{ color: MUTED }}
+                >
+                  {it.d}
+                </p>
               </div>
             ))}
           </div>
@@ -543,64 +582,69 @@ export default function AccdPitch() {
       {/* ============ 07 KEY DELIVERABLES ============ */}
       <section
         id="deliverables"
-        className="px-8 py-32"
-        style={{ background: NAVY }}
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
       >
-        <div className="max-w-[1100px] mx-auto">
-          <SectionLabel n="07" label="Key Deliverables" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            What is on the table.
-          </h2>
-          <p className="text-lg opacity-80 mb-16 max-w-2xl">
-            Every deliverable is owned by ACCD &mdash; full rights, full source
-            files, full handover.
-          </p>
+        <div className="mx-auto max-w-5xl">
+          <SectionHeader
+            n="06"
+            kicker="Key Deliverables"
+            title="What is on the table."
+            intro="Every deliverable is owned by ACCD — full rights, full source files, full handover."
+          />
 
-          <div className="divide-y" style={{ borderColor: `${GOLD}30` }}>
+          <div className="mt-16">
             {[
               {
                 w: "Brand Identity",
-                d: "Refined logo system, palette, typography, voice guidelines",
+                d: "Refined logo system, palette, typography, voice guidelines.",
               },
               {
                 w: "Website",
-                d: "Full design and build of the ACCD digital headquarters",
+                d: "Full design and build of the ACCD digital headquarters.",
               },
               {
                 w: "Social Media",
-                d: "Strategy, content pillars, monthly publishing framework",
+                d: "Strategy, content pillars, monthly publishing framework.",
               },
               {
                 w: "Visual System",
-                d: "Master template, presentation decks, event collateral templates",
+                d: "Master template, presentation decks, event collateral templates.",
               },
               {
                 w: "Member Communication",
-                d: "Email templates, newsletter framework, official letter formats",
+                d: "Email templates, newsletter framework, official letter formats.",
               },
               {
                 w: "Governance",
-                d: "Brand usage guidelines for committees, partners, and members",
+                d: "Brand usage guidelines for committees, partners, and members.",
               },
-            ].map((row, i) => (
+            ].map((row, i, arr) => (
               <div
                 key={row.w}
-                className="grid grid-cols-12 gap-4 py-6 items-baseline"
-                style={{ borderTop: i === 0 ? `1px solid ${GOLD}40` : "none", borderBottom: `1px solid ${GOLD}20` }}
+                className="grid grid-cols-12 gap-4 md:gap-6 py-7 items-baseline"
+                style={{
+                  borderTop: `1px solid ${GOLD}30`,
+                  borderBottom:
+                    i === arr.length - 1 ? `1px solid ${GOLD}30` : "none",
+                }}
               >
                 <span
-                  className="col-span-1 text-xs font-mono tracking-[0.3em]"
+                  className="col-span-2 md:col-span-1 font-mono text-[10px] tracking-[0.35em]"
                   style={{ color: GOLD }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3
-                  className="col-span-4 font-display text-xl"
+                  className="col-span-10 md:col-span-4 font-display text-[1.15rem] tracking-[-0.005em]"
                   style={{ color: GOLD_SOFT }}
                 >
                   {row.w}
                 </h3>
-                <p className="col-span-7 text-sm opacity-80 leading-relaxed">
+                <p
+                  className="col-span-12 md:col-span-7 text-[0.95rem] leading-[1.7]"
+                  style={{ color: MUTED }}
+                >
                   {row.d}
                 </p>
               </div>
@@ -610,26 +654,20 @@ export default function AccdPitch() {
       </section>
 
       {/* ============ 08 WHY THIS WORKS ============ */}
-      <section
-        id="why"
-        className="px-8 py-32"
-        style={{ background: NAVY_DEEP }}
-      >
-        <div className="max-w-[1200px] mx-auto">
-          <SectionLabel n="08" label="Why This Works For ACCD" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            This is not a generic refresh.
-          </h2>
-          <p className="text-lg opacity-80 mb-16 max-w-2xl">
-            Every decision was shaped by the realities of the air cargo
-            industry and ACCD&rsquo;s specific position within it.
-          </p>
+      <section id="why" className="relative px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="07"
+            kicker="Why This Works For ACCD"
+            title="This is <em style='color:#e0c489;font-style:italic;font-weight:300'>not</em> a generic refresh."
+            intro="Every decision was shaped by the realities of the air cargo industry and ACCD&rsquo;s specific position within it."
+          />
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-14">
             {[
               {
                 t: "Executive-grade by default",
-                d: "Reflects the seniority of ACCD&rsquo;s membership and the audiences it engages &mdash; ministries, regulators, airlines, freight forwarders, ground handlers, customs.",
+                d: "Reflects the seniority of ACCD&rsquo;s membership and the audiences it engages — ministries, regulators, airlines, freight forwarders, ground handlers, customs.",
               },
               {
                 t: "Built for credibility, not virality",
@@ -637,11 +675,11 @@ export default function AccdPitch() {
               },
               {
                 t: "Operationally realistic",
-                d: "Templates and systems designed for a Club secretariat &mdash; not a full-time marketing department.",
+                d: "Templates and systems designed for a Club secretariat — not a full-time marketing department.",
               },
               {
                 t: "Industry-native",
-                d: "Air cargo terminology, workflows, and stakeholder map are built into the structure &mdash; not bolted on.",
+                d: "Air cargo terminology, workflows, and stakeholder map are built into the structure — not bolted on.",
               },
               {
                 t: "A platform, not a project",
@@ -652,21 +690,15 @@ export default function AccdPitch() {
                 d: "From homepage to social grid, the experience is built around the people the Club exists to serve.",
               },
             ].map((it) => (
-              <div
-                key={it.t}
-                className="p-8"
-                style={{
-                  background: NAVY,
-                  border: `1px solid ${GOLD}40`,
-                }}
-              >
+              <div key={it.t} className="border-l-2 pl-6" style={{ borderColor: GOLD }}>
                 <h3
-                  className="font-display text-xl mb-3"
-                  style={{ color: GOLD_SOFT }}
+                  className="font-display text-[1.25rem] mb-3 tracking-[-0.005em]"
+                  style={{ color: PAPER }}
                   dangerouslySetInnerHTML={{ __html: it.t }}
                 />
                 <p
-                  className="text-sm opacity-80 leading-relaxed"
+                  className="text-[0.95rem] leading-[1.75] max-w-md"
+                  style={{ color: MUTED }}
                   dangerouslySetInnerHTML={{ __html: it.d }}
                 />
               </div>
@@ -678,20 +710,18 @@ export default function AccdPitch() {
       {/* ============ 09 FUTURE OPPORTUNITIES ============ */}
       <section
         id="future"
-        className="px-8 py-32"
-        style={{ background: NAVY }}
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
       >
-        <div className="max-w-[1200px] mx-auto">
-          <SectionLabel n="09" label="Future Opportunities" />
-          <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 max-w-3xl">
-            Once the foundation is live, the Club extends into higher-impact
-            territory.
-          </h2>
-          <p className="text-lg opacity-80 mb-16 max-w-2xl">
-            Each module builds on the system already delivered.
-          </p>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="08"
+            kicker="Future Opportunities"
+            title="Once the foundation is live, the Club extends into <em style='color:#e0c489;font-style:italic;font-weight:300'>higher-impact</em> territory."
+            intro="Each module builds on the system already delivered."
+          />
 
-          <div className="space-y-6">
+          <div>
             {[
               {
                 t: "ACCD Digital Yearbook",
@@ -717,25 +747,30 @@ export default function AccdPitch() {
                 t: "Multilingual Outreach",
                 d: "Extending key communication into Hindi and regional languages for broader industry inclusion.",
               },
-            ].map((it, i) => (
+            ].map((it, i, arr) => (
               <div
                 key={it.t}
-                className="grid grid-cols-12 gap-6 items-baseline py-6"
-                style={{ borderTop: `1px solid ${GOLD}30` }}
+                className="grid grid-cols-12 gap-4 md:gap-6 py-8 items-baseline"
+                style={{
+                  borderTop: `1px solid ${GOLD}30`,
+                  borderBottom:
+                    i === arr.length - 1 ? `1px solid ${GOLD}30` : "none",
+                }}
               >
                 <span
-                  className="col-span-1 font-mono text-xs tracking-[0.3em]"
+                  className="col-span-2 md:col-span-1 font-mono text-[10px] tracking-[0.35em]"
                   style={{ color: GOLD }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3
-                  className="col-span-4 font-display text-xl"
+                  className="col-span-10 md:col-span-4 font-display text-[1.2rem] tracking-[-0.005em]"
                   style={{ color: GOLD_SOFT }}
                   dangerouslySetInnerHTML={{ __html: it.t }}
                 />
                 <p
-                  className="col-span-7 text-sm opacity-80 leading-relaxed"
+                  className="col-span-12 md:col-span-7 text-[0.95rem] leading-[1.75]"
+                  style={{ color: MUTED }}
                   dangerouslySetInnerHTML={{ __html: it.d }}
                 />
               </div>
@@ -747,81 +782,113 @@ export default function AccdPitch() {
       {/* ============ 10 CLOSING ============ */}
       <section
         id="closing"
-        className="relative min-h-[92vh] flex flex-col items-center justify-center px-8 py-32"
+        className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 py-32"
         style={{
-          background: `radial-gradient(ellipse at center, ${NAVY} 0%, ${NAVY_DEEP} 70%)`,
+          background: `radial-gradient(ellipse at 50% 50%, ${NIGHT} 0%, ${INK} 75%)`,
         }}
       >
-        <div className="text-center max-w-3xl">
+        <div className="relative z-10 max-w-3xl text-center">
           <Image
             src={LOGO}
             alt="ACCD"
-            width={180}
-            height={180}
+            width={160}
+            height={160}
             className="mx-auto mb-12 opacity-95"
           />
-          <div
-            className="mx-auto w-16 h-px mb-10"
-            style={{ background: GOLD }}
-          />
+
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <GoldRule width="w-10" />
+            <span
+              className="text-[10px] tracking-[0.5em] uppercase"
+              style={{ color: GOLD }}
+            >
+              In closing
+            </span>
+            <GoldRule width="w-10" />
+          </div>
+
           <p
-            className="font-display text-3xl md:text-5xl italic font-light leading-tight mb-16"
+            className="font-display font-light italic leading-[1.2] tracking-[-0.01em] text-[2rem] md:text-[3.25rem] mb-20"
             style={{ color: PAPER }}
           >
             &ldquo;Built for the industry that keeps India moving.&rdquo;
           </p>
 
-          <div className="space-y-3 mb-16">
+          <div className="space-y-3 mb-20">
             <p
-              className="text-sm tracking-[0.4em] uppercase"
+              className="text-[11px] tracking-[0.5em] uppercase"
               style={{ color: GOLD }}
             >
               4 Knotts Kreativ
             </p>
-            <p className="text-xs tracking-[0.35em] uppercase opacity-70">
+            <p
+              className="text-[9px] tracking-[0.4em] uppercase"
+              style={{ color: MUTED }}
+            >
               Brand &middot; Digital &middot; Strategy
             </p>
           </div>
 
-          <p className="text-xs tracking-[0.3em] uppercase opacity-60 mb-2">
-            For the attention of the
+          <p
+            className="text-[10px] tracking-[0.35em] uppercase mb-3"
+            style={{ color: MUTED }}
+          >
+            For the attention of
           </p>
           <p
-            className="text-sm tracking-[0.3em] uppercase mb-12"
+            className="text-[11px] tracking-[0.4em] uppercase mb-16"
             style={{ color: GOLD_SOFT }}
           >
-            ACCD Executive Committee
+            The ACCD Executive Committee
           </p>
-          <p className="text-sm opacity-80">
+
+          <p
+            className="text-[0.95rem] italic"
+            style={{ color: MUTED }}
+          >
             We look forward to taking this forward.
           </p>
         </div>
-      </section>
 
-      {/* Section index — desktop */}
-      <nav
-        aria-label="Sections"
-        className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 z-20 flex-col gap-3"
-      >
-        {SECTIONS.map((s) => (
-          <a
-            key={s.id}
-            href={`#${s.id}`}
-            className="group flex items-center gap-3 justify-end"
-          >
-            <span
-              className="text-[10px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity"
-              style={{ color: GOLD_SOFT }}
-            >
-              {s.label}
-            </span>
-            <span
-              className="w-6 h-px transition-all group-hover:w-10"
-              style={{ background: GOLD }}
-            />
-          </a>
-        ))}
-      </nav>
-    </main>
+        <CornerMarks />
+      </section>
+    </div>
+  );
+}
+
+function CornerMarks() {
+  const mark = (corner: string) => (
+    <span
+      aria-hidden
+      className={`pointer-events-none absolute ${corner} h-5 w-5`}
+      style={{
+        borderColor: GOLD,
+      }}
+    />
+  );
+  return (
+    <>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-8 left-8 h-6 w-6"
+        style={{ borderTop: `1px solid ${GOLD}`, borderLeft: `1px solid ${GOLD}` }}
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-8 right-8 h-6 w-6"
+        style={{ borderTop: `1px solid ${GOLD}`, borderRight: `1px solid ${GOLD}` }}
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-8 left-8 h-6 w-6"
+        style={{ borderBottom: `1px solid ${GOLD}`, borderLeft: `1px solid ${GOLD}` }}
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-8 right-8 h-6 w-6"
+        style={{ borderBottom: `1px solid ${GOLD}`, borderRight: `1px solid ${GOLD}` }}
+      />
+      {mark("")}
+    </>
   );
 }
