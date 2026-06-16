@@ -223,15 +223,204 @@ export default function AccdPitch() {
         </div>
       </section>
 
-      {/* ============ 03 BRAND IDENTITY ============ */}
+      {/* ============ 02.5 BEFORE & AFTER ============ */}
       <section
-        id="identity"
+        id="transformation"
         className="relative px-6 py-32 md:py-40"
         style={{ background: NIGHT }}
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             n="02"
+            kicker="Before & After"
+            title="The same Club. A <em style='color:#e0c489;font-style:italic;font-weight:300'>new</em> digital presence."
+            intro="The Club's current site has served the membership for years. The proposed experience repositions ACCD for the next decade — executive in tone, contemporary in design, and engineered for the audiences the Club actually convenes."
+          />
+
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-16">
+            {/* BEFORE */}
+            <div>
+              <div className="flex items-center gap-4 mb-5">
+                <span
+                  className="text-[10px] tracking-[0.45em] uppercase"
+                  style={{ color: MUTED }}
+                >
+                  Before
+                </span>
+                <span className="flex-1 h-px" style={{ background: `${PAPER}22` }} />
+                <span
+                  className="text-[10px] tracking-[0.35em] uppercase"
+                  style={{ color: MUTED }}
+                >
+                  accd.co.in
+                </span>
+              </div>
+              <div
+                className="overflow-hidden"
+                style={{
+                  background: INK,
+                  border: `1px solid ${PAPER}20`,
+                  boxShadow: "0 30px 60px -20px rgba(0,0,0,0.6)",
+                }}
+              >
+                <div
+                  className="flex items-center gap-2 px-4 py-3 border-b"
+                  style={{ borderColor: `${PAPER}15`, background: INK }}
+                >
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#555" }} />
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#555" }} />
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#555" }} />
+                  <span
+                    className="ml-3 text-[10px] tracking-[0.25em] uppercase truncate"
+                    style={{ color: MUTED }}
+                  >
+                    accd.co.in
+                  </span>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://image.thum.io/get/width/1280/crop/900/https://accd.co.in"
+                  alt="Current ACCD website"
+                  width={1280}
+                  height={900}
+                  loading="lazy"
+                  className="w-full h-auto block"
+                  style={{ filter: "grayscale(0.35) brightness(0.85)" }}
+                />
+              </div>
+              <p
+                className="mt-5 text-[0.85rem] leading-[1.7]"
+                style={{ color: MUTED }}
+              >
+                Functional, informational. A noticeboard that has served the
+                membership for years.
+              </p>
+            </div>
+
+            {/* AFTER */}
+            <div>
+              <div className="flex items-center gap-4 mb-5">
+                <span
+                  className="text-[10px] tracking-[0.45em] uppercase"
+                  style={{ color: GOLD }}
+                >
+                  After
+                </span>
+                <span className="flex-1 h-px" style={{ background: GOLD }} />
+                <span
+                  className="text-[10px] tracking-[0.35em] uppercase"
+                  style={{ color: GOLD_SOFT }}
+                >
+                  Proposed
+                </span>
+              </div>
+              <a
+                href="https://accd-six.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden transition-transform duration-500 hover:scale-[1.01]"
+                style={{
+                  background: NIGHT,
+                  border: `1px solid ${GOLD}50`,
+                  boxShadow:
+                    "0 40px 80px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(200,163,90,0.12)",
+                }}
+              >
+                <div
+                  className="flex items-center gap-2 px-4 py-3 border-b"
+                  style={{ borderColor: `${GOLD}30`, background: INK }}
+                >
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#ff5f57" }} />
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#febc2e" }} />
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#28c840" }} />
+                  <span
+                    className="ml-3 text-[10px] tracking-[0.25em] uppercase truncate"
+                    style={{ color: GOLD_SOFT }}
+                  >
+                    accd-six.vercel.app
+                  </span>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://image.thum.io/get/width/1280/crop/900/https://accd-six.vercel.app"
+                  alt="Proposed ACCD website"
+                  width={1280}
+                  height={900}
+                  loading="lazy"
+                  className="w-full h-auto block"
+                />
+              </a>
+              <p
+                className="mt-5 text-[0.85rem] leading-[1.7]"
+                style={{ color: MUTED }}
+              >
+                Editorial, executive-grade. A digital headquarters that mirrors
+                ACCD&rsquo;s stature in Indian trade and aviation.{" "}
+                <a
+                  href="https://accd-six.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:underline"
+                  style={{ color: GOLD_SOFT }}
+                >
+                  View the live preview&nbsp;↗
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* comparison table */}
+          <div className="mt-16">
+            {[
+              { label: "Tone", before: "Informational noticeboard", after: "Executive industry forum" },
+              { label: "Structure", before: "Linked text and tabs", after: "Editorial sections with hierarchy" },
+              { label: "Imagery", before: "Generic stock visuals", after: "Curated aviation & cargo imagery" },
+              { label: "Member experience", before: "Static directory", after: "Trusted membership hub" },
+              { label: "Mobile experience", before: "Desktop-first layout", after: "Mobile-first responsive" },
+              { label: "Publishing", before: "Occasional updates", after: "Owned platform for insight & events" },
+            ].map((row, i, arr) => (
+              <div
+                key={row.label}
+                className="grid grid-cols-12 gap-3 md:gap-6 py-5 items-baseline text-[0.92rem]"
+                style={{
+                  borderTop: `1px solid ${GOLD}30`,
+                  borderBottom:
+                    i === arr.length - 1 ? `1px solid ${GOLD}30` : "none",
+                }}
+              >
+                <span
+                  className="col-span-12 md:col-span-3 font-mono text-[10px] tracking-[0.35em] uppercase"
+                  style={{ color: GOLD }}
+                >
+                  {row.label}
+                </span>
+                <span
+                  className="col-span-12 md:col-span-4 leading-[1.6]"
+                  style={{ color: MUTED }}
+                >
+                  {row.before}
+                </span>
+                <span
+                  className="col-span-12 md:col-span-5 leading-[1.6]"
+                  style={{ color: PAPER }}
+                >
+                  {row.after}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 03 BRAND IDENTITY ============ */}
+      <section
+        id="identity"
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: INK }}
+      >
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            n="03"
             kicker="Brand Identity"
             title="An identity engineered for <em style='color:#e0c489;font-style:italic;font-weight:300'>boardrooms</em>, ministries, and global cargo forums."
             intro="Refined to operate at the level ACCD&rsquo;s membership expects."
@@ -321,10 +510,14 @@ export default function AccdPitch() {
       </section>
 
       {/* ============ 04 WEBSITE EXPERIENCE ============ */}
-      <section id="website" className="relative px-6 py-32 md:py-40">
+      <section
+        id="website"
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
+      >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            n="03"
+            n="04"
             kicker="Website Experience"
             title="The Club&rsquo;s <em style='color:#e0c489;font-style:italic;font-weight:300'>digital headquarters.</em>"
             intro="One authoritative source for members, partners, government stakeholders, and the wider industry."
@@ -430,11 +623,11 @@ export default function AccdPitch() {
       <section
         id="social"
         className="relative px-6 py-32 md:py-40"
-        style={{ background: NIGHT }}
+        style={{ background: INK }}
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            n="04"
+            n="05"
             kicker="Social Media Strategy"
             title="Four pillars matched to the Club&rsquo;s <em style='color:#e0c489;font-style:italic;font-weight:300'>actual mandate</em>."
             intro="Not a generic agency content calendar. A publishing system designed for an industry body."
@@ -511,10 +704,14 @@ export default function AccdPitch() {
       </section>
 
       {/* ============ 06 VISUAL DESIGN SYSTEM ============ */}
-      <section id="system" className="relative px-6 py-32 md:py-40">
+      <section
+        id="system"
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
+      >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            n="05"
+            n="06"
             kicker="Visual Design System"
             title="A documented system. <em style='color:#e0c489;font-style:italic;font-weight:300'>No drift.</em> No off-brand output."
             intro="The infrastructure that underpins everything ACCD will publish from this point forward."
@@ -583,11 +780,11 @@ export default function AccdPitch() {
       <section
         id="deliverables"
         className="relative px-6 py-32 md:py-40"
-        style={{ background: NIGHT }}
+        style={{ background: INK }}
       >
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            n="06"
+            n="07"
             kicker="Key Deliverables"
             title="What is on the table."
             intro="Every deliverable is owned by ACCD — full rights, full source files, full handover."
@@ -654,10 +851,14 @@ export default function AccdPitch() {
       </section>
 
       {/* ============ 08 WHY THIS WORKS ============ */}
-      <section id="why" className="relative px-6 py-32 md:py-40">
+      <section
+        id="why"
+        className="relative px-6 py-32 md:py-40"
+        style={{ background: NIGHT }}
+      >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            n="07"
+            n="08"
             kicker="Why This Works For ACCD"
             title="This is <em style='color:#e0c489;font-style:italic;font-weight:300'>not</em> a generic refresh."
             intro="Every decision was shaped by the realities of the air cargo industry and ACCD&rsquo;s specific position within it."
@@ -711,11 +912,11 @@ export default function AccdPitch() {
       <section
         id="future"
         className="relative px-6 py-32 md:py-40"
-        style={{ background: NIGHT }}
+        style={{ background: INK }}
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            n="08"
+            n="09"
             kicker="Future Opportunities"
             title="Once the foundation is live, the Club extends into <em style='color:#e0c489;font-style:italic;font-weight:300'>higher-impact</em> territory."
             intro="Each module builds on the system already delivered."
