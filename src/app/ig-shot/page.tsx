@@ -2,8 +2,6 @@ import InstagramMock from "@/components/showcase/InstagramMock";
 import { getProjectWithAssets } from "@/lib/assets.server";
 
 // Temporary route just for capturing clean images of the Instagram main page.
-export const dynamic = "force-dynamic";
-
 export default async function Page({
   searchParams,
 }: {

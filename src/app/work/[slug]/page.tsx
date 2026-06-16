@@ -7,9 +7,6 @@ import AccdPitch from "@/components/showcase/AccdPitch";
 
 type Params = { slug: string };
 
-// Always read the latest files dropped into /public/projects on each request.
-export const dynamic = "force-dynamic";
-
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
