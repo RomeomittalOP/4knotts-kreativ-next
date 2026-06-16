@@ -77,6 +77,8 @@ export type Project = {
    *   "/projects/omega/preview-mobile.mp4"
    */
   previewVideoMobile?: string;
+  /** Optional live deploy URL — when set, the laptop mockup links here. */
+  liveUrl?: string;
 
   // ---- Dummy Instagram page (shown inside the phone mockup) ----------------
   /**
@@ -322,6 +324,7 @@ export const projects: Project[] = [
     themeAccent: "#0a1628",
     logoImage: "/projects/accd/logo.png",
     coverImage: "/projects/accd/gallery/Master Template.png",
+    liveUrl: "https://accd-six.vercel.app/",
     previewImages: [
       "/projects/accd/gallery/Master Template.png",
       "/projects/accd/gallery/Screenshot 2026-05-21 211317.png",

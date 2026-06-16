@@ -114,7 +114,22 @@ export default function ShowcaseClient({
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             className="mt-20"
           >
-            <LaptopFitted project={project} />
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open live site for ${project.title}`}
+                className="group block cursor-pointer transition-transform duration-500 hover:scale-[1.01]"
+              >
+                <LaptopFitted project={project} />
+                <div className="mt-6 text-center text-xs uppercase tracking-[0.3em] text-white/50 transition-colors group-hover:text-white/90">
+                  Visit live site &nbsp;↗
+                </div>
+              </a>
+            ) : (
+              <LaptopFitted project={project} />
+            )}
           </motion.div>
         </div>
       </section>
