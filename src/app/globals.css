@@ -5,8 +5,8 @@
 :root {
   --bg: #0a0a0b;
   --fg: #ffffff;
-  --violet: #6c63ff;
-  --cyan: #00e5ff;
+  --violet: #C8C8CE;
+  --cyan: #FFFFFF;
 }
 
 * {
@@ -54,7 +54,7 @@ html.lenis body {
 }
 
 ::selection {
-  background: rgba(108, 99, 255, 0.4);
+  background: rgba(200, 200, 206, 0.4);
   color: #fff;
 }
 
@@ -67,7 +67,7 @@ html.lenis body {
   background: #0a0a0b;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6c63ff, #00e5ff);
+  background: linear-gradient(180deg, #C8C8CE, #FFFFFF);
   border-radius: 999px;
 }
 
@@ -77,7 +77,7 @@ html.lenis body {
     text-wrap: balance;
   }
   .text-gradient {
-    background: linear-gradient(120deg, #ffffff 0%, #c8c4ff 35%, #6c63ff 60%, #00e5ff 100%);
+    background: linear-gradient(120deg, #ffffff 0%, #E8E8EC 35%, #C8C8CE 60%, #FFFFFF 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -85,7 +85,7 @@ html.lenis body {
     animation: gradient-x 8s ease infinite;
   }
   .text-gradient-static {
-    background: linear-gradient(90deg, #6c63ff, #00e5ff);
+    background: linear-gradient(90deg, #C8C8CE, #FFFFFF);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -105,7 +105,7 @@ html.lenis body {
   .border-gradient {
     position: relative;
     background: linear-gradient(#111, #111) padding-box,
-      linear-gradient(135deg, rgba(108, 99, 255, 0.7), rgba(0, 229, 255, 0.7)) border-box;
+      linear-gradient(135deg, rgba(200, 200, 206, 0.5), rgba(255, 255, 255, 0.3)) border-box;
     border: 1px solid transparent;
   }
   .noise {

@@ -8,8 +8,8 @@ const config: Config = {
         ink: "#0A0A0B",
         carbon: "#111111",
         snow: "#ffffff",
-        violet: "#6C63FF",
-        cyan: "#00E5FF",
+        violet: "#C8C8CE",
+        cyan: "#FFFFFF",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
@@ -53,8 +53,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        glow: "0 0 60px -10px rgba(108,99,255,0.45)",
-        "glow-cyan": "0 0 60px -10px rgba(0,229,255,0.45)",
+        glow: "0 0 60px -10px rgba(200,200,206,0.35)",
+        "glow-cyan": "0 0 60px -10px rgba(255,255,255,0.3)",
       },
     },
   },

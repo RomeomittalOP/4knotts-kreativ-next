@@ -170,14 +170,14 @@ export const accdReelScript: ReelCard[] = [
 export const projects: Project[] = [
   {
     slug: "4-knotts-stationery",
-    title: "4 Knotts Stationery",
-    tag: "Stationery Brand · Web Experience",
+    title: "Noted By 4 Knotts",
+    tag: "Premium Notebooks · Brand & E-Commerce",
     shortIntro:
-      "A premium stationery brand experience designed for tactile delight.",
+      "A premium notebook brand experience designed for tactile delight.",
     longIntro:
-      "A modern and visually engaging stationery experience — every page treated like a layout in a print catalogue, with refined typography and rhythmic spacing that lets each product breathe.",
+      "A modern and visually engaging notebook experience — every page treated like a layout in a print catalogue, with refined typography and rhythmic spacing that lets each product breathe.",
     description:
-      "A modern and visually engaging website experience designed for a stationery brand.",
+      "A premium notebook brand with modern aesthetics and an elevated shopping experience.",
     highlights: [
       "Modern UI",
       "Responsive design",
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     themePrimary: "#FF8FB1",
     themeAccent: "#6C63FF",
     logoImage: "/projects/4-knotts-stationery/logo.png",
-    coverImage: "/projects/4-knotts-stationery/gallery/01.png",
+    coverImage: "/projects/4-knotts-stationery/gallery/Master Template.jpeg",
     reelScript: stationeryReelScript,
     gallery: [
       { ratio: "wide", theme: "from-[#FF8FB1] to-[#6C63FF]", label: "Notebook Series", caption: "Editorial product layout" },
@@ -210,7 +210,7 @@ export const projects: Project[] = [
       { ratio: "square", theme: "from-[#6C63FF] to-[#FF8FB1]", label: "Craft" },
     ],
     frame: [
-      { kind: "nav", brand: "4K. Stationery" },
+      { kind: "nav", brand: "Noted" },
       {
         kind: "hero",
         title: "Crafted to hold ideas.",
@@ -234,7 +234,7 @@ export const projects: Project[] = [
       },
       { kind: "feature", title: "A studio behind every product.", body: "Designed in Delhi. Limited runs. Refilled with care." },
       { kind: "cta", title: "Find your everyday companion.", cta: "Explore collection" },
-      { kind: "footer", brand: "4 Knotts Stationery" },
+      { kind: "footer", brand: "Noted By 4 Knotts" },
     ],
   },
   {

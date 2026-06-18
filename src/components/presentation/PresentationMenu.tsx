@@ -30,8 +30,8 @@ function ProjectMark({ project }: { project: Project }) {
   if (slug === "4-knotts-stationery") {
     return (
       <div className="text-center text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
-        <div className="font-display text-7xl font-medium leading-none md:text-9xl">4K.</div>
-        <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.4em] opacity-80">Stationery Co.</div>
+        <div className="font-display text-7xl font-medium leading-none md:text-9xl">Noted.</div>
+        <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.4em] opacity-80">By 4 Knotts</div>
       </div>
     );
   }
