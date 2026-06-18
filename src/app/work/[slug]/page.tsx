@@ -43,7 +43,6 @@ export default async function WorkPage({
         <>
           <ShowcaseClient project={project} prev={prev} next={next} hideNav />
           <AccdPitch />
-          <ShowcaseNav prev={prev} next={next} />
         </>
       ) : (
         <ShowcaseClient project={project} prev={prev} next={next} />
