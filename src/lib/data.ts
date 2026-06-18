@@ -190,21 +190,24 @@ export const projects: Project[] = [
     themeBg: "#1a1422",
     themePrimary: "#FF8FB1",
     themeAccent: "#6C63FF",
-    // 👇 Drop your image paths here once files are in /public/projects/4-knotts-stationery/
-    // logoImage: "/projects/4-knotts-stationery/logo.png",
-    // coverImage: "/projects/4-knotts-stationery/cover.jpg",
-    // previewImages: [
-    //   "/projects/4-knotts-stationery/preview/01.jpg",
-    //   "/projects/4-knotts-stationery/preview/02.jpg",
-    //   "/projects/4-knotts-stationery/preview/03.jpg",
-    // ],
+    logoImage: "/projects/4-knotts-stationery/logo.png",
+    coverImage: "/projects/4-knotts-stationery/gallery/01.png",
     reelScript: stationeryReelScript,
     gallery: [
-      // Add `src: "/projects/4-knotts-stationery/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#FF8FB1] to-[#6C63FF]", label: "Notebook Series", caption: "Editorial product layout" },
       { ratio: "square", theme: "from-[#B47BFF] to-[#FF8FB1]", label: "Brand Colors" },
       { ratio: "square", theme: "from-[#2a1a35] to-[#6C63FF]", label: "Type System" },
       { ratio: "wide", theme: "from-[#6C63FF] to-[#FF8FB1]", label: "Collection Pages", caption: "Story-led shopping" },
+      { ratio: "square", theme: "from-[#FF8FB1] to-[#B47BFF]", label: "Product Detail" },
+      { ratio: "square", theme: "from-[#6C63FF] to-[#2a1a35]", label: "Brand Identity" },
+      { ratio: "wide", theme: "from-[#B47BFF] to-[#FF8FB1]", label: "Design System" },
+      { ratio: "square", theme: "from-[#2a1a35] to-[#FF8FB1]", label: "Typography" },
+      { ratio: "square", theme: "from-[#FF8FB1] to-[#6C63FF]", label: "Packaging" },
+      { ratio: "wide", theme: "from-[#6C63FF] to-[#B47BFF]", label: "Showcase" },
+      { ratio: "square", theme: "from-[#B47BFF] to-[#2a1a35]", label: "Layout" },
+      { ratio: "square", theme: "from-[#2a1a35] to-[#6C63FF]", label: "Details" },
+      { ratio: "wide", theme: "from-[#FF8FB1] to-[#B47BFF]", label: "Brand Story" },
+      { ratio: "square", theme: "from-[#6C63FF] to-[#FF8FB1]", label: "Craft" },
     ],
     frame: [
       { kind: "nav", brand: "4K. Stationery" },
@@ -256,21 +259,26 @@ export const projects: Project[] = [
     themeBg: "#0e1a16",
     themePrimary: "#7CFFB2",
     themeAccent: "#00E5FF",
-    // 👇 Drop your image paths here once files are in /public/projects/vriksh/
-    // logoImage: "/projects/vriksh/logo.png",
-    // coverImage: "/projects/vriksh/cover.jpg",
-    // previewImages: [
-    //   "/projects/vriksh/preview/01.jpg",
-    //   "/projects/vriksh/preview/02.jpg",
-    //   "/projects/vriksh/preview/03.jpg",
-    // ],
+    logoImage: "/projects/vriksh/logo.png",
+    coverImage: "/projects/vriksh/gallery/01.png",
     reelScript: vrikshReelScript,
     gallery: [
-      // Add `src: "/projects/vriksh/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#0e1a16] to-[#7CFFB2]", label: "Story Hero", caption: "Cinematic intro" },
       { ratio: "square", theme: "from-[#7CFFB2] to-[#00E5FF]", label: "Tree of Impact" },
       { ratio: "square", theme: "from-[#0e1a16] to-[#00E5FF]", label: "Field Diaries" },
       { ratio: "wide", theme: "from-[#00E5FF] to-[#7CFFB2]", label: "Get Involved", caption: "Community pathways" },
+      { ratio: "square", theme: "from-[#7CFFB2] to-[#0e1a16]", label: "Nature Palette" },
+      { ratio: "square", theme: "from-[#0e1a16] to-[#7CFFB2]", label: "Brand Identity" },
+      { ratio: "wide", theme: "from-[#00E5FF] to-[#0e1a16]", label: "Ecosystem" },
+      { ratio: "square", theme: "from-[#7CFFB2] to-[#00E5FF]", label: "Community" },
+      { ratio: "square", theme: "from-[#0e1a16] to-[#00E5FF]", label: "Detail" },
+      { ratio: "wide", theme: "from-[#7CFFB2] to-[#0e1a16]", label: "Showcase" },
+      { ratio: "square", theme: "from-[#00E5FF] to-[#7CFFB2]", label: "Visual" },
+      { ratio: "square", theme: "from-[#0e1a16] to-[#7CFFB2]", label: "Layout" },
+      { ratio: "wide", theme: "from-[#7CFFB2] to-[#00E5FF]", label: "Brand Story" },
+      { ratio: "square", theme: "from-[#00E5FF] to-[#0e1a16]", label: "Typography" },
+      { ratio: "square", theme: "from-[#0e1a16] to-[#00E5FF]", label: "Details" },
+      { ratio: "wide", theme: "from-[#7CFFB2] to-[#0e1a16]", label: "Craft" },
     ],
     frame: [
       { kind: "nav", brand: "vriksh" },
@@ -385,12 +393,7 @@ export const projects: Project[] = [
     themeBg: "#100619",
     themePrimary: "#C9A96E",
     themeAccent: "#B76E79",
-    // 👇 Drop your image paths here once files are in /public/projects/veloura/
-    // logoImage: "/projects/veloura/logo.png",
-    // coverImage: "/projects/veloura/cover.jpg",
-    // previewImages: [ "/projects/veloura/preview/01.jpg", ... ],
     gallery: [
-      // Add `src: "/projects/veloura/gallery/01.jpg"` to any item to use a real image.
       { ratio: "wide", theme: "from-[#1A0A2E] to-[#C9A96E]", label: "Landing", caption: "Sensorial hero" },
       { ratio: "square", theme: "from-[#B76E79] to-[#C9A96E]", label: "Eau de Parfum" },
       { ratio: "square", theme: "from-[#100619] to-[#B76E79]", label: "The Ritual" },
