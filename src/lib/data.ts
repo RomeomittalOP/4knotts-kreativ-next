@@ -323,7 +323,7 @@ export const projects: Project[] = [
     themePrimary: "#c9a25a",
     themeAccent: "#0a1628",
     logoImage: "/projects/accd/logo.png",
-    coverImage: "/projects/accd/preview.png",
+    coverImage: "/projects/accd/gallery/Master Template.png",
     liveUrl: "https://accd-six.vercel.app/",
     reelScript: accdReelScript,
     gallery: [
